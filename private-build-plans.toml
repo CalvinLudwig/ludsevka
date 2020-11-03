@@ -1,0 +1,166 @@
+[buildPlans.ludsevka] # <ludsevka> is your plan name
+design = [
+  'sp-force-monospace',
+  'ligset-clike',
+  'ss08',
+  'v-a-doublestorey-toothless-rounded',
+  'v-b-toothless-rounded',
+  'v-d-toothless-rounded',
+  'v-f-flat-hook-round-tailed',
+  'v-g-earless-rounded',
+  'v-h-straight',
+  'v-i-serifed',
+  'v-j-straight',
+  'v-k-curly',
+  'v-l-italic',
+  'v-m-earless-rounded-double-arch-shortleg',
+  'v-n-earless-rounded-straight',
+  'v-p-earless-rounded',
+  'v-q-earless-rounded',
+  'v-r-earless-rounded',
+  'v-t-standard',
+  'v-u-without-bar',
+  'v-v-straight',
+  'v-w-straight-flat-top',
+  'v-x-straight',
+  'v-y-straight-turn',
+  'v-z-standard',
+  'v-turn-v-straight',
+  'v-capital-b-more-asymmetric',
+  'v-capital-d-more-rounded',
+  'v-capital-g-toothless',
+  'v-capital-j-serifed-symmetric',
+  'v-capital-k-curly',
+  'v-capital-m-hanging',
+  'v-capital-q-crossing',
+  'v-capital-r-curly',
+  'v-capital-y-curly',
+  'v-zero-reverse-slashed',
+  'v-one-base',
+  'v-three-twoarcs',
+  'v-four-semi-open',
+  'v-six-closed-contour',
+  'v-seven-noserif',
+  'v-nine-closed-contour',
+  'v-tilde-low',
+  'v-asterisk-hexhigh',
+  'v-underscore-low',
+  'v-paren-large-contou',
+  'v-brace-straight',
+  'v-numbersign-slanted-open',
+  'v-ampersand-et',
+  'v-at-short',
+  'v-dollar-open',
+  'v-percent-rings-connected',
+] # Customize styles
+family = "Ludsevka" # Font menu family name
+# upright = ["upright-styles"]            # Uncomment this line to set styles for upright only
+# italic = ["italic-styles"]              # Uncomment this line to set styles for italic only
+# oblique = ["oblique-styles"]            # Uncomment this line to set styles for oblique only
+# hintParams = ["-a", "sss"]              # Optional custom parameters for ttfautohint
+
+###################################################################################################
+# Override default building weights
+# When buildPlans.<plan name>.weights is absent, all weights would built and mapped to
+# default values.
+# IMPORTANT : Currently "menu" and "css" property only support numbers between 0 and 1000.
+#             and "shape" properly only supports number between 100 and 900 (inclusive).
+#             If you decide to use custom weights you have to define all the weights you
+#             plan to use otherwise they will not be built.
+# [buildPlans.ludsevka.weights.regular]
+# css = 400 # Weight for webfont CSS.
+# menu = 400 # Weight for the font's names.
+# shape = 400 # Weight for glyph shapes.
+
+[buildPlans.ludsevka.weights.book]
+css = 450
+menu = 450 # Use 450 here to name the font's weight "Book"
+shape = 450
+
+# [buildPlans.ludsevka.weights.bold]
+# css = 700
+# menu = 700
+# shape = 700
+
+# End weight section
+###################################################################################################
+
+###################################################################################################
+# Override default building slope sets
+# Format: <upright|italic|oblique> = <"normal"|"italic"|"oblique">
+# When this section is absent, all slopes would be built.
+
+[buildPlans.ludsevka.slopes]
+italic = "italic"
+upright = "normal"
+# oblique = "oblique"
+
+# End slope section
+###################################################################################################
+
+###################################################################################################
+# Override default building widths
+# When buildPlans.<plan name>.widths is absent, all widths would built and mapped to
+# default values.
+# IMPORTANT : Currently "shape" property only supports numbers between 434 and 664 (inclusive),
+#             while "menu" only supports integers between 1 and 9 (inclusive).
+#             The "shape" parameter specifies the unit width, measured in 1/1000 em. The glyphs'
+#             width are equal to, or a simple multiple of the unit width.
+#             If you decide to use custom widths you have to define all the widths you plan to use,
+#             otherwise they will not be built.
+
+[buildPlans.ludsevka.widths.normal]
+css = "normal" # "font-stretch' property of webfont CSS.
+menu = 5 # Width grade for the font's names.
+shape = 500 # Unit Width, measured in 1/1000 em.
+
+[buildPlans.ludsevka.widths.extended]
+css = "expanded"
+menu = 7
+shape = 576
+
+# End width section
+###################################################################################################
+
+###################################################################################################
+# Character Exclusion
+# Specify character ranges in the section below to exclude certain characters from the font being
+# built. Remove this section when this feature is not needed.
+
+# [buildPlans.ludsevka.exclude-chars]
+# ranges = [[10003, 10008]]
+
+# End character exclusion
+###################################################################################################
+
+###################################################################################################
+# Compatibility Ligatures
+# Certain applications like Emacs does not support proper programming liagtures provided by
+# OpenType, but can support ligatures provided by PUA codepoints. Therefore you can edit the
+# following section to build PUA characters that are generated from the OpenType ligatures.
+# Remove this section when compatibility ligatures are not needed.
+
+[[buildPlans.ludsevka.compatibility-ligatures]]
+featureTag = 'calt'
+sequence = '<*>'
+unicode = 57600 # 0xE100
+
+# End compatibility ligatures section
+###################################################################################################
+
+###################################################################################################
+# Metric overrides
+# Certain metrics like line height (leading) could be overridden in your build plan file.
+# Edit the values to change the metrics. Remove this section when overriding is not needed.
+
+[buildPlans.ludsevka.metric-override]
+leading = 1250
+powerlineScaleX = 1
+powerlineScaleY = 1
+powerlineShiftX = 0
+powerlineShiftY = 0
+winMetricAscenderPad = 0
+winMetricDescenderPad = 0
+
+# End metric override section
+###################################################################################################
